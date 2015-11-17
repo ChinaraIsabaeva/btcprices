@@ -1,6 +1,9 @@
+#!/usr/bin/python3
+
 import unittest, psycopg2, datetime
 
-from app.get_prices import insert_into_db
+from lib.get_prices import insert_into_db
+from lib.exchanges import *
 
 connection = psycopg2.connect("dbname=test-btcPrices user=chinara")
 cursor = connection.cursor()

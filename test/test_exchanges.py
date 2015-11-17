@@ -1,6 +1,6 @@
 import unittest
 
-from app.exchanges import Bitfinex, Bitstamp, Okcoin, Kraken
+from lib.exchanges import Bitfinex, Bitstamp, Okcoin, Kraken
 
 class TestExhangesObjects(unittest.TestCase):
 
