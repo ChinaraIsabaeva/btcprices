@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 
-import psycopg2, datetime, csv
+import psycopg2, datetime, csv, os
 
 from exchanges import Bitfinex, Bitstamp, Kraken, Okcoin
-connection = psycopg2.connect("dbname=btcPrices user=chinara")
+
+DATABASE_NAME = os.environ['DATABASE_NAME']
+DATABASE_USER = os.environ['DATABASE_USER']
+
+connection_kwgs = "dbname={name} user={user}".format(name=DATABASE_NAME, user=DATABASE_USER)
+
+connection = psycopg2.connect(connection_kwgs)
 cursor = connection.cursor()
 
 
