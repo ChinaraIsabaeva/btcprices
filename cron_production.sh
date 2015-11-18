@@ -1,5 +1,5 @@
 #! /bin/bash
 
 
-cd app/
+cd lib/
 python get_prices.py
