@@ -2,14 +2,20 @@
 
 import psycopg2, datetime, csv, os
 
+from urllib import parse
 from exchanges import Bitfinex, Bitstamp, Kraken, Okcoin
 
-DATABASE_NAME = os.environ['DATABASE_NAME']
-DATABASE_USER = os.environ['DATABASE_USER']
+parse.uses_netloc.append("postgres")
+url = parse.urlparse(os.environ["DATABASE_URL"])
 
-connection_kwgs = "dbname={name} user={user}".format(name=DATABASE_NAME, user=DATABASE_USER)
+connection = psycopg2.connect(
+    database=url.path[1:],
+    user=url.username,
+    password=url.password,
+    host=url.hostname,
+    port=url.port
+)
 
-connection = psycopg2.connect(connection_kwgs)
 cursor = connection.cursor()
 
 
