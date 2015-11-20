@@ -1,0 +1,20 @@
+.block-info> h4 {
+    font-weight: bold;
+}
+
+.block-info {
+    margin-bottom: 30px;
+}
+
+.block-info .panel-body > h5 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.panel {
+    border: none;
+}
+
+.panel-default>.panel-heading {
+    background-color: #e5e5ff;
+}

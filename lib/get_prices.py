@@ -1,8 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import psycopg2, datetime, csv, os
 
 from urllib import parse
+from psycopg2.extras import RealDictCursor
+
 from exchanges import Bitfinex, Bitstamp, Kraken, Okcoin
 
 parse.uses_netloc.append("postgres")
@@ -34,7 +36,6 @@ def insert_into_db():
 def save_to_file():
     with open('prices.csv', 'w') as csvfile:
        cursor.copy_expert("COPY prices_history TO STDOUT WITH CSV HEADER", csvfile) 
-
 
 def main():
    insert_into_db()

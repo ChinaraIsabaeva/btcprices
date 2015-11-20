@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>BTCPrices API</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#home">BTC Prices API</a>
+        </div>
+        </div>
+    </nav>
+    <div id="home" class="container">
+        <div class="col-md-10 pull-right">
+            <div class="block-info">
+                <h4>Rest API</h4>
+                <p>BTCPrices collects latest price for BTC/USD rate from 4 Bitcoin Exchanges: Bitfinex, Bitstamp, Okcoin and Kraken every hour</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="latestPriceHeading">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#latestPrice" aria-expanded="true" aria-controls="latestPrice"><i class="fa fa-caret-down"></i> Latest Price</a>
+                        </h4>
+                    </div>
+                    <div id="latestPrice" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="latestPriceHeading">
+                        <div class="panel-body">
+                            <p>URL: <samp>/api/latestprice</samp></p>
+                            <h5>Example</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src={{ url_for('static', filename='app.js') }}></script>
+    </body>
+</html>
