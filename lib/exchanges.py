@@ -9,11 +9,10 @@ class Exchange(object):
 
     def get_ticker(self):
         response = requests.get(self.ticker)
-        if response.status_code != 200:
-            return None
-        else:
+        if response.status_code == 200:
             return response.json()
-        
+        else:
+            return None
         
 
 class Bitfinex(Exchange):
