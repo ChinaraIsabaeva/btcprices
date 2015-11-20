@@ -29,7 +29,19 @@
         </div>
     </nav>
     <div id="home" class="container">
-        <div class="col-md-10 pull-right">
+        <div class="col-md-3 sidenav">
+            <div class="list-group">
+                <div class="list-group-item">
+                    <h4>Source code</h4>
+                    <p>Please find source code on <a href="https://github.com/ChinaraIsabaeva/btcprices">github</a></p>
+                </div>
+                <div class="list-group-item">
+                    <h4>Contact me</h4>
+                    <p>If you have any questions or requests, please email to <a href="mailto:chinara.isabaeva@gmail.com?subject=BTC%20Prices%20App" target="_blank">chinara.isabaeva@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
             <div class="block-info">
                 <h4>Rest API</h4>
                 <p>BTCPrices collects latest price for BTC/USD rate from 4 Bitcoin Exchanges: Bitfinex, Bitstamp, Okcoin and Kraken every hour</p>
@@ -44,6 +56,13 @@
                         <div class="panel-body">
                             <p>URL: <samp>/api/latestprice</samp></p>
                             <h5>Example</h5>
+                            <div class="example">
+                                <p>Get request: <pre>{{ config.DOMAIN }}api/latestprice</pre></p>
+                                <p>Response:</p>
+                                <div class="response">
+                                    <pre></pre>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

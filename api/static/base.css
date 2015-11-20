@@ -18,3 +18,25 @@
 .panel-default>.panel-heading {
     background-color: #e5e5ff;
 }
+.example{
+    margin-right: 0;
+    margin-left: 0;
+    border-style: solid;
+    padding: 15px;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+}
+
+pre{
+    color: #5F5C5C;
+    border: none;
+    padding: 0 10px;
+}
+.sidenav{
+    margin-top: 70px;
+}
+
+.sidenav .list-group-item {
+    border: none;
+}
