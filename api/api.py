@@ -1,6 +1,6 @@
 import json
 
-from lib.query import get_query_as_json
+from query import get_query_as_json
 
 from flask import Flask, render_template
 from flask_restful import Resource, Api
@@ -21,4 +21,4 @@ api.add_resource(LatestPrice, '/api/latestprice')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
