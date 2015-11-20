@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import psycopg2, datetime, csv, os, decimal, json
 
 from urllib import parse

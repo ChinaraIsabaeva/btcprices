@@ -1,7 +1,6 @@
 import json
 
-from lib import get_query_as_json
-
+from lib.query import get_query_as_json
 
 from flask import Flask, render_template
 from flask_restful import Resource, Api
