@@ -24,4 +24,6 @@ cursor = connection.cursor(cursor_factory=RealDictCursor)
 def get_query_as_json():
     cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
     date = json.dumps(cursor.fetchall(), cls=MyEncoder)
+    cursor.close()
+    connection.close()
     return date
