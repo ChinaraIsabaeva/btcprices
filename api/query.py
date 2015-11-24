@@ -1,29 +1,32 @@
 #!/usr/bin/python
 
-import psycopg2, datetime, csv, os, decimal, json
-
+import json, os, psycopg2
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
 from json_encoder import MyEncoder
 
-parse.uses_netloc.append("postgres")
-url = parse.urlparse(os.environ["DATABASE_URL"])
-
-connection = psycopg2.connect(
-    database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
-)
-
-cursor = connection.cursor(cursor_factory=RealDictCursor)
+parse.uses_netloc.append("postgres") 
 
 
-def get_query_as_json():
-    cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
-    date = json.dumps(cursor.fetchall(), cls=MyEncoder)
-    cursor.close()
-    connection.close()
-    return date
+class Prices(object):
+    def get_db(self):
+        url = parse.urlparse(os.environ["DATABASE_URL"])
+        connection = psycopg2.connect(
+            database=url.path[1:],
+            user=url.username, 
+            password=url.password, 
+            host=url.hostname,
+            port=url.port )
+        return connection
+
+    def get_prices_as_json(self):
+        cursor = self.get_db().cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
+        date = json.dumps(cursor.fetchall(), cls=MyEncoder)
+        cursor.close()
+        self.get_db().close()
+        return date
+
+
+
