@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import json, os, psycopg2
-from psycopg2.extras import RealDictCursor
+import os, psycopg2
+from urllib import parse
 
 def get_db():
     url = parse.urlparse(os.environ["DATABASE_URL"])
