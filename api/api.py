@@ -1,11 +1,12 @@
 import json
 from psycopg2.extras import RealDictCursor
 
+from json_encoder import MyEncoder
+from get_db import get_db
+
 from flask import Flask, render_template, g
 from flask_restful import Resource, Api
 
-from json_encoder import MyEncoder
-from app_db import get_db
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
