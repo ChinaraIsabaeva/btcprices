@@ -4,7 +4,7 @@ from psycopg2.extras import RealDictCursor
 
 from json_encoder import MyEncoder
 
-from flask import Flask, render_template, g
+from flask import Flask, render_template
 from flask_restful import Resource, Api
 
 
