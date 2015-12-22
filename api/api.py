@@ -2,7 +2,7 @@ import json,  psycopg2, os
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
-from json_encoder import MyEncoder
+from lib.json_encoder import MyEncoder
 
 from flask import Flask, render_template
 from flask_restful import Resource, Api
