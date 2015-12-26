@@ -53,3 +53,13 @@ class Kraken(Exchange):
         response = self.get_ticker()
         price = response['result']['XXBTZUSD']['c'][0]
         return price
+
+
+class BTCE(Exchange):
+    def __init__(self):
+        self.ticker = 'https://btc-e.com/api/3/ticker/btc_usd'
+
+    def get_latest_price(self):
+        response = self.get_ticker()
+        price = response['btc_usd']['last']
+        return price
