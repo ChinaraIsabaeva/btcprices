@@ -30,6 +30,6 @@ api.add_resource(LatestPrice, '/api/latestprice')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=app.config["DEBUG"])
+    app.run(host='0.0.0.0', port=8000, debug=app.config["DEBUG"])
 
 
