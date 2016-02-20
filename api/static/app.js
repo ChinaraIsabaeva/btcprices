@@ -5,12 +5,14 @@ $(document).ready(function(){
 
     var bigJSONObject = [
         {
-            date: "20 Nov 2015 16:00:04",
-            kraken: "322.41",
-            bitfinex: "322.05",
-            bitstamp: "322.05",
-            okcoin: "322.18"
-        }
+	    bitfinex: "441.90",
+	    btce: "434.80",
+	    okcoin: "441.19",
+	    kraken: "438.50",
+	    coinbase: "440.89",
+	    bitstamp: "438.02",
+	    date: "20 Feb 2016 23:01:48"
+	}
     ];
 
     $.each($('.response').children(), function(idx, child) {

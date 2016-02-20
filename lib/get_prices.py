@@ -41,7 +41,6 @@ def save_to_file():
 
 def main():
    insert_into_db()
-   save_to_file()
    
 
 if __name__ == '__main__':
