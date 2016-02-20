@@ -20,7 +20,7 @@ class LatestPrice(Resource):
     def get(self):
         connection = psycopg2.connect(app.config["DATABASE_URL"])
         cursor = connection.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken, btce FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
+        cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken, btce, coinbase FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
         query = json.dumps(cursor.fetchall(), cls=MyEncoder)
         data = json.loads(query)
         connection.close()
@@ -30,6 +30,6 @@ api.add_resource(LatestPrice, '/api/latestprice')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=app.config["DEBUG"])
+    app.run(host='0.0.0.0', debug=app.config["DEBUG"])
 
 
