@@ -40,3 +40,7 @@ pre{
 .sidenav .list-group-item {
     border: none;
 }
+
+.inline-mode img {
+    margin: 7px 0;
+}

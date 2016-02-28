@@ -71,21 +71,25 @@
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="latestPriceHeading">
+                    <div class="panel-heading" role="tab" id="BotHeading">
                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" href="#latestPrice" aria-expanded="true" aria-controls="latestPrice"><i class="fa fa-caret-down"></i> Get price via Telegramm</a>
+                            <a role="button" data-toggle="collapse" href="#botInfo" aria-expanded="true" aria-controls="botInfo"><i class="fa fa-caret-down"></i> Get price via Telegramm</a>
                         </h4>
                     </div>
-                    <div id="latestPrice" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="latestPriceHeading">
+                    <div id="botInfo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="BotHeading">
                         <div class="panel-body">
                             <p>To get prices send to bot message with text 'price' or command '/price'.</p>
                             <p>Also you can use bot in inline mode. Use query 'help' to get help and 'price' to get price</p>
 
-                            <h5>Example</h5>
-                            <div class="example">
-                                <div>
-                                    <img class="img-responsive" src="{{ url_for('static', filename='example.png') }}">
-                                </div>
+                            <h5>Example normal mode</h5>
+                            <div>
+                                <img class="img-responsive img-thumbnail" src="{{ url_for('static', filename='example.png') }}">
+                            </div>
+
+                            <h5>Example inline mode</h5>
+                            <div class="inline-mode">
+                                <img class="img-responsive img-thumbnail" src="{{ url_for('static', filename='inline_mode_step_1.png') }}">
+                                <img class="img-responsive img-thumbnail" src="{{ url_for('static', filename='inline_mode_step_2.png') }}">
                             </div>
                         </div>
                     </div>
