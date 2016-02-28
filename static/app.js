@@ -16,6 +16,6 @@ $(document).ready(function(){
     ];
 
     $.each($('.response').children(), function(idx, child) {
-        $(child).text(JSON.stringify(bigJSONObject, null, 4));
+        $(child).text(JSON.stringify(bigJSONObject, null, 2));
     });
 });

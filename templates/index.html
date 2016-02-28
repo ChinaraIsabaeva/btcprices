@@ -32,7 +32,7 @@
         </div>
     </nav>
     <div id="home" class="container">
-        <div class="col-md-3 sidenav">
+        <div class="col-md-3 sidenav hidden-xs hidden-sm">
             <div class="list-group">
                 <div class="list-group-item">
                     <h4>Source code</h4>
@@ -47,7 +47,7 @@
         <div class="col-md-9">
             <div class="block-info">
                 <h4>Rest API</h4>
-                <p>BTCPrices collects latest price for BTC/USD rate from 5 Bitcoin Exchanges: Bitfinex, Bitstamp, Okcoin, Kraken, BTC-e and Coinbase every hour</p>
+                <p>BTCPrices collects latest price for BTC/USD rate from 5 Bitcoin Exchanges: Bitfinex, Bitstamp, Okcoin, Kraken, BTC-e and Coinbase every 10 minutes</p>
 
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="latestPriceHeading">
@@ -78,11 +78,13 @@
                     </div>
                     <div id="latestPrice" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="latestPriceHeading">
                         <div class="panel-body">
-                            <p>Send message with text "price" <a href="https://telegram.me/btcprices_bot" target="_b">BTCPrices bot</a>. It could take up to 30 second to get response due to heroku needs to "wake up"</p>
+                            <p>To get prices send to bot message with text 'price' or command '/price'.</p>
+                            <p>Also you can use bot in inline mode. Use query 'help' to get help and 'price' to get price</p>
+
                             <h5>Example</h5>
                             <div class="example">
                                 <div>
-                                    <img src="{{ url_for('static', filename='example.png') }}">
+                                    <img class="img-responsive" src="{{ url_for('static', filename='example.png') }}">
                                 </div>
                             </div>
                         </div>
@@ -91,6 +93,18 @@
 
             </div>
 
+        </div>
+        <div class="col-md-3 sidenav hidden-md hidden-lg">
+            <div class="list-group">
+                <div class="list-group-item">
+                    <h4>Source code</h4>
+                    <p>Please find source code on <a href="https://github.com/ChinaraIsabaeva/btcprices" target="_blank">github</a></p>
+                </div>
+                <div class="list-group-item">
+                    <h4>Contact me</h4>
+                    <p>If you have any questions or requests, please email to <a href="mailto:chinara.isabaeva@gmail.com?subject=BTC%20Prices%20App" target="_blank">chinara.isabaeva@gmail.com</a></p>
+                </div>
+            </div>
         </div>
     </div>
 
