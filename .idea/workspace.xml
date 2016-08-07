@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97f1dbc5-a81e-41ff-8f64-4b03d20e9ea7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/get_prices.py" afterPath="$PROJECT_DIR$/lib/get_prices.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="btc-trading.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="get_prices.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="get_prices.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/get_prices.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="22" selection-start="416" selection-end="416" vertical-scroll-proportion="0.2877907" vertical-offset="0" max-vertical-offset="936">
+            <state line="16" column="22" selection-start="416" selection-end="416" vertical-scroll-proportion="-7.92" vertical-offset="0" max-vertical-offset="936">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.049586777" vertical-offset="0" max-vertical-offset="726">
               <folding />
             </state>
           </provider>
@@ -62,6 +72,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/lib/get_prices.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -368,7 +379,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/get_prices.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="22" selection-start="416" selection-end="416" vertical-scroll-proportion="0.2877907" vertical-offset="0" max-vertical-offset="936">
+        <state line="16" column="22" selection-start="416" selection-end="416" vertical-scroll-proportion="-7.92" vertical-offset="0" max-vertical-offset="936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.049586777" vertical-offset="0" max-vertical-offset="726">
           <folding />
         </state>
       </provider>
