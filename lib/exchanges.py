@@ -23,7 +23,7 @@ class Bitfinex(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['last_price']
+            self.price = self.reponse_as_json(response)['last_price']
         return self.price
 
 
@@ -34,7 +34,7 @@ class Bitstamp(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['last']
+            self.price = self.reponse_as_json(response)['last']
         return self.price
 
 
@@ -45,7 +45,7 @@ class Okcoin(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['ticker']['last']
+            self.price = self.reponse_as_json(response)['ticker']['last']
         return self.price
 
    
@@ -56,7 +56,7 @@ class Kraken(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['result']['XXBTZUSD']['c'][0]
+            self.price = self.reponse_as_json(response)['result']['XXBTZUSD']['c'][0]
         return self.price
 
 
@@ -67,7 +67,7 @@ class BTCE(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['btc_usd']['last']
+            self.price = self.reponse_as_json(response)['btc_usd']['last']
         return self.price
 
 
@@ -78,6 +78,6 @@ class Conibase(Exchange):
     def get_latest_price(self):
         response = self.get_ticker()
         if response.ok:
-            self.price = self.reponse_as_json()['price']
+            self.price = self.reponse_as_json(response)['price']
         return self.price
 
