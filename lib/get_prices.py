@@ -22,7 +22,7 @@ cursor = connection.cursor()
 
 
 def insert_into_db():
-    bitfinex_latest_price = float(0)
+    bitfinex_latest_price = float(Bitfinex().get_latest_price())
     bitstamp_latest_price = float(Bitstamp().get_latest_price())
     okcoin_latest_price = float(Okcoin().get_latest_price())
     kraken_latest_price = float(Kraken().get_latest_price())
