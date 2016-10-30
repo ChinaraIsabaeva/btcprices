@@ -39,9 +39,10 @@ def save_to_file():
     with open('prices.csv', 'w') as csvfile:
        cursor.copy_expert("COPY prices_history TO STDOUT WITH CSV HEADER", csvfile) 
 
+
 def main():
-   insert_into_db()
-   
+    insert_into_db()
+
 
 if __name__ == '__main__':
     main()
