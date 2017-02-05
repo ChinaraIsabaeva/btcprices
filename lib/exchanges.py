@@ -73,7 +73,7 @@ class BTCE(Exchange):
 
 class Conibase(Exchange):
     def __init__(self):
-        self.ticker_url = 'https://api.exchange.coinbase.com/products/BTC-USD/ticker'
+        self.ticker_url = 'https://api.gdax.com/products/BTC-USD/ticker'
 
     def get_latest_price(self):
         response = self.get_ticker()
