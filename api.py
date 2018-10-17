@@ -31,7 +31,6 @@ class LatestPrice(Resource):
         bitstamp_latest_price = float(Bitstamp().get_latest_price())
         okcoin_latest_price = float(Okcoin().get_latest_price())
         kraken_latest_price = float(Kraken().get_latest_price())
-        btce_latest_price = float(BTCE().get_latest_price())
         coinbase_latest_price = float(Conibase().get_latest_price())
 
         initial_dict = {
