@@ -38,7 +38,6 @@ class LatestPrice(Resource):
             'coinbase': coinbase_latest_price,
             'kraken': kraken_latest_price,
             'bitstamp': bitstamp_latest_price,
-            'btce': "N/A",
             'okcoin': okcoin_latest_price,
             'bitfinex': bitfinex_latest_price
         }
