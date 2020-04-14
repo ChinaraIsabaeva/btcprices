@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-import datetime, decimal, json
+import datetime
+import decimal
+import json
 
 
 class MyEncoder(json.JSONEncoder):

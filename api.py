@@ -11,20 +11,13 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 api = Api(app)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
 class LatestPrice(Resource):
-    # def get(self):
-    #     connection = psycopg2.connect(app.config["DATABASE_URL"])
-    #     cursor = connection.cursor(cursor_factory=RealDictCursor)
-    #     cursor.execute("SELECT date, bitfinex, bitstamp, okcoin, kraken, btce, coinbase FROM (SELECT * FROM prices_history ORDER BY date desc LIMIT 1) as last order by id;")
-    #     query = json.dumps(cursor.fetchall(), cls=MyEncoder)
-    #     data = json.loads(query)
-    #     connection.close()
-    #     return data
 
     def get(self):
         bitfinex_latest_price = float(Bitfinex().get_latest_price())
@@ -44,6 +37,7 @@ class LatestPrice(Resource):
         json_string = json.dumps(initial_dict, cls=MyEncoder)
         data = json.loads(json_string)
         return data
+
 
 api.add_resource(LatestPrice, '/api/latestprice')
 

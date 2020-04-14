@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-import psycopg2, datetime, csv, os
+import datetime
+import os
+import psycopg2
 
 from urllib import parse
-from psycopg2.extras import RealDictCursor
 
-from exchanges import Bitfinex, Bitstamp, Kraken, Okcoin, BTCE, Conibase
+from .exchanges import Bitfinex, Bitstamp, Kraken, Okcoin, BTCE, Conibase
 
 parse.uses_netloc.append("postgres")
 url = parse.urlparse(os.environ["DATABASE_URL"])
@@ -31,13 +32,29 @@ def insert_into_db():
 
     date = datetime.datetime.now()
 
-    cursor.execute("INSERT INTO prices_history (date, bitfinex, bitstamp, kraken, okcoin, btce, coinbase) VALUES (%s, %s, %s, %s, %s, %s, %s)", (date, bitfinex_latest_price, bitstamp_latest_price, kraken_latest_price, okcoin_latest_price, btce_latest_price, coinbase_latest_price))
+    cursor.execute(
+        "INSERT INTO prices_history "
+        "(date, bitfinex, bitstamp, kraken, okcoin, btce, coinbase) "
+        "VALUES ("
+        "{date}, {bitfinex}, {bitstamp}, {kraken}, {okcoin}, {btc}, {coinbase}"
+        ")".format(
+            date=date,
+            bitfinex=bitfinex_latest_price,
+            bitstamp=bitstamp_latest_price,
+            kraken=kraken_latest_price,
+            okcoin=okcoin_latest_price,
+            btc=btce_latest_price,
+            coinbase=coinbase_latest_price)
+    )
     connection.commit()
 
 
 def save_to_file():
     with open('prices.csv', 'w') as csvfile:
-       cursor.copy_expert("COPY prices_history TO STDOUT WITH CSV HEADER", csvfile) 
+       cursor.copy_expert(
+           "COPY prices_history TO STDOUT WITH CSV HEADER",
+           csvfile
+       )
 
 
 def main():
